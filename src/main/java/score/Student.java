@@ -15,6 +15,20 @@ public class Student {
 
     }
 
+    public int highest() {
+
+//        int max = (eng>math)? eng:math;
+/*        int max = 0;
+        if (eng > math) {
+            max = eng;
+        } else {
+            max = math;
+        }
+        return max;*/
+        return (eng>math)? eng:math;
+    }
+
+
     public void showScore() {
         System.out.println(name + "(" + id + ")" + "\t" + "math:" + eng + "\t" + "eng:" + math + "\t" + "average:" + ((math + eng) / 2));
     }

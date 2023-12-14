@@ -1,9 +1,20 @@
 package score;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 public class School {
     public static void main(String[] args) {
+//        Student student = userInput();
+        Student student = new Student("Rubyyyyer", "1200", 20, 60);
+        student.showScore();
+        System.out.println("highest:" + student.highest());
+
+    }
+
+    @NotNull
+    private static Student userInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("name:");
         String name = scanner.next();
@@ -15,9 +26,8 @@ public class School {
         System.out.print("math score?");
         int math = scanner.nextInt();
 
-
         Student student = new Student(name, id, eng, math);
-        student.showScore();
 
+        return student;
     }
 }

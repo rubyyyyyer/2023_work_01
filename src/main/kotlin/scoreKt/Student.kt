@@ -7,4 +7,7 @@ class Student(var name: String, var id: String, var eng: Int, var math: Int) {
                     ((math + eng) / 2)
         )
     }
+    fun highest(){
+        
+    }
 }
