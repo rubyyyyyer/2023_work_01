@@ -25,11 +25,55 @@ public class Student {
             max = math;
         }
         return max;*/
-        return (eng>math)? eng:math;
+        return (eng > math) ? eng : math;
     }
 
+    public int getAverage() {
+        return ((math + eng) / 2);
+    }
 
     public void showScore() {
-        System.out.println(name + "(" + id + ")" + "\t" + "math:" + eng + "\t" + "eng:" + math + "\t" + "average:" + ((math + eng) / 2));
+        int average = getAverage();
+        String grading = "";
+        switch (average / 10) {
+            case 9:
+                grading = "A";
+                break;
+            case 8:
+                grading = "B";
+                break;
+            case 7:
+                grading = "C";
+                break;
+            case 6:
+                grading = "D";
+                break;
+            default:
+                grading = "F";
+
+        }
+/*        if(getAverage()<=100 && getAverage()>=90){
+            grading = "A";
+        }else if(getAverage()<=89 && getAverage()>=80){
+            grading = "B";
+        }else if(getAverage()<=79 && getAverage()>=70){
+            grading = "C";
+        }else if(getAverage()<=69 && getAverage()>=60){
+            grading = "D";
+        }else {
+            grading = "F";
+        }*/
+        System.out.print(name + "(" + id + ")" + "\t" + "math:" + eng + "\t" + "eng:" + math + "\t" + "average:" +
+                getAverage() + "\t" + ((getAverage() >= 60) ? "PASS" : "FAILED") + "\t" +
+                "highest:" + highest() + "\t" + "grading:" + grading);
+
+
+
+
+  /*      if (getAverage() >= 60){
+            System.out.println("\tPASS!");
+        }else{
+            System.out.println("\tFAILED!");
+        }*/
     }
 }

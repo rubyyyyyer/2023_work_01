@@ -5,8 +5,9 @@ import kotlin.random.Random
 
 fun main() {
 //    userInput()
-    val student = Student("Ruby", "1200",50,60)
+    val student = Student("Ruby", "1200",70,80)
     student.showScore()
+
 }
 
 private fun userInput() {

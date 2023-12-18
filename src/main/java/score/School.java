@@ -7,9 +7,8 @@ import java.util.Scanner;
 public class School {
     public static void main(String[] args) {
 //        Student student = userInput();
-        Student student = new Student("Rubyyyyer", "1200", 20, 60);
+        Student student = new Student("Rubyyyyer", "1200", 90, 99);
         student.showScore();
-        System.out.println("highest:" + student.highest());
 
     }
 
