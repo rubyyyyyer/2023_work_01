@@ -20,10 +20,20 @@ fun main() {
     var oneWayPrice = 1000
     var discount = 0.8f
     val scanner = Scanner(System.`in`)
+    var bookingAgain = 0
+
+    while(bookingAgain!=-1){
     print("總共要買幾張車票?")
     val totalTickets = scanner.nextInt()
     print("有幾張來回票?")
     val roundTripNum = scanner.nextInt()
+        if(totalTickets-roundTripNum>=0){
     Ticketing(oneWayPrice, discount, totalTickets, roundTripNum).count()
-
+    print("需要繼續使用本系統嗎?請輸入「任意數字」繼續或輸入「-1」離開本系統:")
+    bookingAgain = scanner.nextInt()
+    print((if (bookingAgain==-1)"謝謝惠顧，歡迎下次光臨~" else "歡迎您繼續使用本系統，"))
+        }else{
+            println("輸入的數量有誤，請重新輸入。")
+        }
+    }
 }
