@@ -1,2 +1,4 @@
 rootProject.name = 'work_01'
+include 'test'
+include 'test'
 
