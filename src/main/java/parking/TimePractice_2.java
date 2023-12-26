@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
-public class TimePractice {
+public class TimePractice_2 {
     public static void main(String[] args) {
         java();
 //        java8();
