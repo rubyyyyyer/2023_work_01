@@ -5,6 +5,7 @@ public class Student {
     String id;
     int eng;
     int math;
+    static int pass = 60;
 
 
     public Student(String name, String id, int eng, int math) {
@@ -63,9 +64,9 @@ public class Student {
         }else {
             grading = "F";
         }*/
-        System.out.print(name + "(" + id + ")" + "\t" + "math:" + eng + "\t" + "eng:" + math + "\t" + "average:" +
-                getAverage() + "\t" + ((getAverage() >= 60) ? "PASS" : "FAILED") + "\t" +
-                "highest:" + highest() + "\t" + "grading:" + grading);
+        System.out.print(name + "(" + id + ")" + "\t" + "math:" + eng + "\t\t" + "english:" + math + "\t\t\t\t\t" + "average:" +
+                getAverage() + "\t" + ((getAverage() >= pass) ? "PASS" : "FAILED") + "\t" +
+                "highest:" + highest() + "\t" + "grading:" + grading +"\n");
 
 
 

@@ -5,8 +5,13 @@ import kotlin.random.Random
 
 fun main() {
 //    userInput()
-    val student = Student("Ruby", "1200",70,80)
-    student.showScore()
+    Student.pass = 80
+    val studentA = Student("Ruby", "1200",70,80)
+    val studentB = Student("Eric","1201",90,20)
+    val studentC = Student("Jane","1222",60,90)
+    studentA.showScore()
+    studentB.showScore()
+    studentC.showScore()
 
 }
 
