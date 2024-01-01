@@ -11,14 +11,21 @@ public class GraduateStudent extends Student {
 
     @Override
     public int highest() {
-        int max=100;
-        if(eng>max){
-            max=eng;
-        }else if (thesis>max){
-            max=thesis;
-        }else{
-            max=math;
+        int max;
+        //方法一
+        /*
+        if (eng > math) {
+            max = eng;
+        } else {
+            max = math;
         }
+        if (thesis > max) {
+            max = thesis;
+        }
+        return max;*/
+
+        //方法二
+        max = eng>math?(eng>thesis?eng:thesis):(math>thesis?math:thesis);
         return max;
     }
 
@@ -30,7 +37,7 @@ public class GraduateStudent extends Student {
     @Override
     public void showScore() {
         int average = getAverage();
-        String grading = "";
+        String grading;
         switch (average / 10) {
             case 9:
                 grading = "A";

@@ -9,13 +9,15 @@ public class School {
 //        Student student = userInput();
 //        Student.pass = 60;
         Student studentA = new Student("Rubyyyyer", "1200", 90, 99);
-        Student studentB = new Student("Ericcccc","1201",60,90);
+        Student studentB = new Student("Ericcccc","1201",60,60);
         Student studentC = new Student("Janeeee","1300",40,20);
-        GraduateStudent graduateStudentA = new GraduateStudent("Selinnnn","1368",60,60,100);
+        GraduateStudent graduateStudentA = new GraduateStudent("Selinnnn","1368",90,80,40);
+        GraduateStudent graduateStudentB = new GraduateStudent("Checkkk","1266",20,100,100);
         studentA.showScore();
         studentB.showScore();
         studentC.showScore();
         graduateStudentA.showScore();
+        graduateStudentB.showScore();
 
     }
 
