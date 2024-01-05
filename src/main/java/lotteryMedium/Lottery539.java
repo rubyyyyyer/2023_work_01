@@ -35,13 +35,19 @@ public class Lottery539 extends LotteryGame {
 
     @Override
     public Set<Integer> autoNum() {
-//        for (int i = 0; i < winningNum; i++) {
-//        }
-        randomNum = random.nextInt(7) + 1;
-        System.out.println("\t" + randomNum + "\t" + rejectNum.contains(randomNum));
-        if (!rejectNum.contains(randomNum) && !autoNum.contains(randomNum)) {
+        for (int i = 0; i <= winningNum; i++) {
+            randomNum = random.nextInt(7) + 1;
+            System.out.println(i + "\t" + randomNum);
             autoNum.add(randomNum);
+//            if (autoNum.size() != i) {
+//                i--;
+//            }
         }
+        System.out.println("1st電腦選號:" + autoNum);
+        checkNum(winningNum);
         return autoNum;
     }
+
+
+
 }

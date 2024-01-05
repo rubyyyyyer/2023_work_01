@@ -17,18 +17,18 @@ public abstract class LotteryGame {
 
     public Boolean checkNum(int winningNum) {
         autoNum.removeAll(rejectNum);
-        System.out.println(winningNum);
+        System.out.println("2nd電腦選號:" + autoNum);
+        System.out.println("winningNumA:" + winningNum);
         if (autoNum.size() == winningNum) {
             System.out.println("印出彩券："+autoNum);
             return true;
         } else {
-            autoNum();
-            checkNum(winningNum);
+//            autoNum();
             return false;
         }
     }
 
-
+    ;
 //    public void finalNum(){
 //        if (checkNum()==true){
 //            System.out.println("印出結果"+autoNum);
