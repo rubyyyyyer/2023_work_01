@@ -2,7 +2,7 @@ package lotteryIn5;
 
 import java.util.*;
 
-public class LotteryGame {
+public class LotteryGame1_Ruby {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
