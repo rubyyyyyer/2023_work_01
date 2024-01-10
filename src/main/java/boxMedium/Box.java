@@ -1,17 +1,27 @@
 package boxMedium;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
 public class Box {
-    float height;
-    float width;
-    float length;
+    float boxHeight=23;
+    float boxWidth=14;
+    float boxLength=13;
+//    Float[] boxA =
+    float userHeight;
+    float userWidth;
+    float userLength;
+
 
     public Box(float height, float width, float length) {
-        this.height = height;
-        this.width = width;
-        this.length = length;
+        this.userHeight = height;
+        this.userWidth = width;
+        this.userLength = length;
     }
 
-//    public Float[] userInputResize(float height, float width, float length){
-//        System.out.println(userInput);
-//    }
+
+
 }
+
