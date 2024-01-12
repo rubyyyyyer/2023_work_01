@@ -58,7 +58,7 @@ public class LotteryGame3_Rubyyyyyer {
         //從lotteryBallNum刪除使用者想要的球號
         lotteryBallNum.removeAll(wantedInputInputArrNum);
         //算出還剩下幾個要亂數跑的球
-        int remainBall = 8 - wantedInputInputArrNum.size();
+        int remainBall = finalBallInputS - wantedInputInputArrNum.size();
         for (int i = 0; i < remainBall; i++) {
             int randomIndex = random.nextInt(lotteryBallNum.size());
             finalBallNum.add((Integer) lotteryBallNum.get(randomIndex));
