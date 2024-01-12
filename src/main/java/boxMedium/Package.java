@@ -5,10 +5,10 @@ public class Package extends Object {
         super(width, height, length);
     }
 
-    @Override
-    public boolean check(Float width, Float height, Float length) {
-        return false;
-    }
+//    @Override
+//    public boolean check(Float width, Float height, Float length) {
+//        return false;
+//    }
 
 
 }

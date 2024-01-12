@@ -24,7 +24,7 @@ public class LotteryMachine {
 
 
         lotteryGame.userInputBallNum();
-        lotteryGame.userInputWinningBall();
+//        lotteryGame.userInputWinningBall();
         lotteryGame.userInputRejectNum();
         lotteryGame.userInputWantedNum();
         lotteryGame.finalBall();

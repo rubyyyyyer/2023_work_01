@@ -21,10 +21,10 @@ public class Main {
 //        System.out.println(userInputObj.width);
 //        System.out.println(userInputObj.height);
 //        System.out.println(userInputObj.length);
-        Object boxA = new Box((float) 23, (float) 14, (float) 13);
-        Object boxB = new Box((float) 39.5, (float) 27.5, (float) 23);
-        Boolean aResult = boxA.check(userInputObj.width, userInputObj.height, userInputObj.length);
-        Boolean bResult = boxB.check(userInputObj.width, userInputObj.height, userInputObj.length);
+        Box boxA = new Box(23f, (float) 14, (float) 13);
+        Box boxB = new Box(39.5f, (float) 27.5, (float) 23);
+        Boolean aResult = boxA.check(userInputObj);
+        Boolean bResult = boxB.check(userInputObj);
 
         if (aResult == true && bResult == true) {
             System.out.println("2個箱子都能放，但放A箱子比較便宜!");

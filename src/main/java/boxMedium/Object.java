@@ -10,5 +10,5 @@ public abstract class Object {
         this.height = height;
         this.length = length;
     }
-    public abstract boolean check(Float width, Float height, Float length);
+//    public abstract boolean check(Float width, Float height, Float length);
 }

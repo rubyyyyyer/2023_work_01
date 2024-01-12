@@ -8,19 +8,19 @@ public class Box extends Object {
         super(width, height, length);
     }
 
-    @Override
-    public boolean check(Float width, Float height, Float length) {
+//    @Override
+    public boolean check(Object user) {
 //        System.out.println(width + "\t" + height + "\t" + length + "\t" + "我輸入的包裹大小");
 //        System.out.println(super.width + "\t" + super.height + "\t" + super.length + "\t" + "這個箱子大小");
 
         List<Float> packageList = new ArrayList<>();
-        Collections.addAll(packageList, width, height, length);
+        Collections.addAll(packageList, user.width, user.height, user.length);
         packageList.sort(Comparator.naturalOrder());
 //        System.out.println(packageList);
 
 
         List<Float> boxList = new ArrayList<>();
-        Collections.addAll(boxList, (super.width), (super.height), (super.length));
+        Collections.addAll(boxList, (this.width), (this.height), (this.length));
         boxList.sort(Comparator.naturalOrder());
 //        System.out.println(boxList);
 
@@ -39,6 +39,7 @@ public class Box extends Object {
         } else {
             return false;
         }
+
     }
 
 

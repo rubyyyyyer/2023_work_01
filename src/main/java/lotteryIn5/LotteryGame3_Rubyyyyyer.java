@@ -29,9 +29,9 @@ public class LotteryGame3_Rubyyyyyer {
         return lotteryBallNum;
     }
     //要抽出幾顆球
-    public int userInputWinningBall() {
-        return finalBallInputS;
-    }
+//    public int userInputWinningBall() {
+//        return finalBallInputS;
+//    }
 
     //不要的球號
     public List<Integer> userInputRejectNum() {
@@ -61,7 +61,7 @@ public class LotteryGame3_Rubyyyyyer {
         int remainBall = finalBallInputS - wantedInputInputArrNum.size();
         for (int i = 0; i < remainBall; i++) {
             int randomIndex = random.nextInt(lotteryBallNum.size());
-            finalBallNum.add((Integer) lotteryBallNum.get(randomIndex));
+            finalBallNum.add(lotteryBallNum.get(randomIndex));
             lotteryBallNum.remove(randomIndex);
         }
         //排序
