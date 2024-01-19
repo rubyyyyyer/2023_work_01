@@ -1,4 +1,4 @@
-package manyData
+package manyData.kotlin
 
 fun main() {
     val list: List<Int> = listOf(2, 3, 5, 7, 11)
