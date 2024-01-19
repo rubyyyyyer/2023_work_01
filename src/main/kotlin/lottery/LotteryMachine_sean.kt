@@ -1,4 +1,4 @@
-package lottery
+package lottery.sean
 
 import inputToNum
 import java.util.Scanner
