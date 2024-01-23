@@ -1,4 +1,4 @@
-package lottery
+package lottery.first
 
 import java.util.Scanner
 import kotlin.random.Random

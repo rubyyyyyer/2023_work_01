@@ -1,7 +1,7 @@
 package lottery
 
+import inputToNum
 import java.util.Scanner
-import kotlin.random.Random
 
 fun main() {
     val scanner = Scanner(System.`in`)
@@ -12,73 +12,51 @@ fun main() {
     val finalBallInput: Int = scanner.nextInt()
     scanner.nextLine()
     print("請輸入不要的數字:")
-    var rejectInput: String = scanner.nextLine()
+    val rejectInput: String = scanner.nextLine()
     print("請輸入一定要的數字:")
-    var wantedInput: String = scanner.nextLine()
+    val wantedInput: String = scanner.nextLine()
     val lottery = Lottery(lotteryBallInput, finalBallInput, rejectInput, wantedInput)
 
-    val rejectInputNum = lottery.inputToNum(rejectInput)
-    println("這裡是《不要》的轉換:$rejectInputNum")
-
-    val wantedInputInputNum = lottery.inputToNum(wantedInput)
-    println("這裡是《要》的轉換:$wantedInputInputNum")
-    lottery.randomNum(lotteryBallInput, finalBallInput, rejectInputNum, wantedInputInputNum)
+    lottery.randomNum()
 }
 
 class Lottery(
-    val lotteryBallInput: Int,
-    val finalBallInput: Int,
-    var rejectInput: String,
-    var wantedInput: String
+    private val lotteryBallInput: Int,
+    private val finalBallInput: Int,
+    //如果沒有在建構子以外的地方用到，就不需要使用var宣告
+    rejectInput: String,
+    wantedInput: String
 ) {
+    private var rejectInputNum: List<Int>
+    private var wantedInputInputNum: List<Int>
 
-    var InputIntList: MutableList<Int> = mutableListOf()
-
-
-    fun inputToNum(input: String): MutableList<Int> {
-        var inputStringList: MutableList<String> = input.split(" ").toMutableList()
-//        var rejectInputIntList: MutableList<Int> = mutableListOf()
-
-//        使用原本for回圈的方法
-//        for (i in 1..rejectInputStringList.size) {
-//            var rejectInputToNum: Int = rejectInputStringList.get(i).toInt()
-//            rejectInputIntList.add(rejectInputToNum)
-//            println(rejectInputIntList)
-//        }
-//        是一种用于检查集合成员关系的语法。它检查变量 i 是否是集合 rejectInputStringList 中的一个元素。
-//        for (i in rejectInputStringList) {
-//            var rejectInputToNum: Int =i.toInt()
-//            rejectInputIntList.add(rejectInputToNum)
-//            println(rejectInputIntList)
-//        }
-//      map 是集合的一个高阶函数，它用于对集合的每个元素进行转换并生成一个新的集合。
-        InputIntList = inputStringList.map { it.toInt() }.toMutableList()
-
-        return InputIntList
+    init {
+        rejectInputNum = inputToNum(rejectInput)
+        println("這裡是《不要》的轉換:$rejectInputNum")
+        wantedInputInputNum = inputToNum(wantedInput)
+        println("這裡是《要》的轉換:$wantedInputInputNum")
     }
 
-    fun randomNum(
-        lotteryBallInput: Int,
-        finalBallInput: Int,
-        rejectInput: MutableList<Int>,
-        wantedInput: MutableList<Int>
-    ): MutableList<Int> {
+
+    fun randomNum(): List<Int> {
         var randomNum: Int
-        val random = Random(finalBallInput)
         var randomList: MutableList<Int> = mutableListOf()
-        var finalList: MutableList<Int> = mutableListOf()
-        for (i in 1..lotteryBallInput) {
-            randomList.add(i)
-        }
+        val finalList: MutableList<Int> = mutableListOf()
+//        for (i in 1..lotteryBallInput) randomList.add(i)
+        randomList = (1..lotteryBallInput).toList().toMutableList()
+//        for (i in 1..lotteryBallInput) {
+//            randomList.add(i)
+//        }
         println("產生全部球數:$randomList")
-        randomList.removeAll(rejectInput)
+        randomList.removeAll(this.rejectInputNum)
         println("刪除不要的號碼:$randomList")
-        finalList.addAll(wantedInput)
+        finalList.addAll(wantedInputInputNum)
         println("在結果先放入一定要的數字:$finalList")
         println("剩下幾個空格:${finalBallInput - finalList.size}")
+
+        
         for (i in 1..(finalBallInput - finalList.size)) {
             randomNum = randomList.random()
-//            println("亂數出來的數字:$randomNum")
             randomList.remove(randomNum)
             finalList.add(randomNum)
         }
