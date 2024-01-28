@@ -27,13 +27,11 @@ class Lottery(
     rejectInput: String,
     wantedInput: String
 ) {
-    private var rejectInputNum: List<Int>
-    private var wantedInputInputNum: List<Int>
+    private var rejectInputNum: List<Int> = inputToNum(rejectInput)
+    private var wantedInputInputNum: List<Int> = inputToNum(wantedInput)
 
     init {
-        rejectInputNum = inputToNum(rejectInput)
         println("這裡是《不要》的轉換:$rejectInputNum")
-        wantedInputInputNum = inputToNum(wantedInput)
         println("這裡是《要》的轉換:$wantedInputInputNum")
     }
 
@@ -43,7 +41,7 @@ class Lottery(
         var randomList: MutableList<Int> = mutableListOf()
         val finalList: MutableList<Int> = mutableListOf()
 //        for (i in 1..lotteryBallInput) randomList.add(i)
-        randomList = (1..lotteryBallInput).toList().toMutableList()
+        randomList = (1..lotteryBallInput).toMutableList()
 //        for (i in 1..lotteryBallInput) {
 //            randomList.add(i)
 //        }
@@ -54,11 +52,11 @@ class Lottery(
         println("在結果先放入一定要的數字:$finalList")
         println("剩下幾個空格:${finalBallInput - finalList.size}")
 
-        
+
         for (i in 1..(finalBallInput - finalList.size)) {
-            randomNum = randomList.random()
-            randomList.remove(randomNum)
-            finalList.add(randomNum)
+//            randomNum = randomList.random()
+//            randomList.remove(randomNum)
+//            finalList.add(randomNum)
         }
         println("最後結果:${finalList}")
         return finalList
