@@ -9,6 +9,7 @@ fun main(){
     reports.add(healthReport)
     reports.add(financeReport)
     for (item in reports){
+        item.load()
         item.read()
     }
 }
