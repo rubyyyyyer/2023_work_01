@@ -8,7 +8,7 @@ open class Size(val height: Float, val width: Float, val length: Float) {
         return boxSize
     }
 
-    fun checkBox(userInput: UserPackage, regularSize: RegularSize): Int {
+    fun checkBox(userInput: Size, regularSize: Size): Int {
 
         var count: Int = 0;
 
@@ -29,7 +29,7 @@ open class Size(val height: Float, val width: Float, val length: Float) {
     }
 }
 
-class UserPackage(height: Float, width: Float, length: Float) : Size(height, width, length)
-class RegularSize(height: Float, width: Float, length: Float) : Size(height, width, length)
+//class UserPackage(height: Float, width: Float, length: Float) : Size(height, width, length)
+//class RegularSize(height: Float, width: Float, length: Float) : Size(height, width, length)
 
 

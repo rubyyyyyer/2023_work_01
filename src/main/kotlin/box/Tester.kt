@@ -8,16 +8,19 @@ fun main() {
     //A:長23      寬14      高13 (cm)
     //B:長39.5    寬27.5    高23 (cm)
     val userInput = userInput()
-    val userInputNum = UserPackage(userInput[0], userInput[1], userInput[2])
-    val regularSizeA = RegularSize(23f, 14f, 13f)
-    val regularSizeB = RegularSize(39.5f, 27.5f, 23f)
+    val userInputNum = Size(userInput[0], userInput[1], userInput[2])
+    val regularSizeA = Size(23f, 14f, 13f)
+    val regularSizeB = Size(39.5f, 27.5f, 23f)
 
-    var checkAReList = regularSizeA.reorder()
-    var checkAPoint = regularSizeA.checkBox(userInputNum, regularSizeA)
+    val userInputList = userInputNum.reorder()
 
-    var checkBReList = regularSizeB.reorder()
-    var checkBPoint = regularSizeB.checkBox(userInputNum, regularSizeB)
+    val checkAReList = regularSizeA.reorder()
+    val checkAPoint = regularSizeA.checkBox(userInputNum, regularSizeA)
 
+    val checkBReList = regularSizeB.reorder()
+    val checkBPoint = regularSizeB.checkBox(userInputNum, regularSizeB)
+
+    println("checkAList:$userInputList")
     println("checkAList:$checkAReList")
     println("checkBList:$checkBReList")
     println("checkAList:$checkAPoint")
@@ -27,9 +30,7 @@ fun main() {
         println("放在A盒子,比較省錢")
     } else if (checkAPoint < 3 && checkBPoint < 3) {
         println("沒有盒子可以放")
-    } else if (checkAPoint == 3) {
-        println("放在A盒子")
-    } else if (checkBPoint == 3) {
+    }  else if (checkBPoint == 3) {
         println("放在B盒子")
     }
 }
