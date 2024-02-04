@@ -20,19 +20,27 @@ fun main() {
     val checkBReList = regularSizeB.reorder()
     val checkBPoint = regularSizeB.checkBox(userInputNum, regularSizeB)
 
-    println("checkAList:$userInputList")
+    println("userInputList:$userInputList")
     println("checkAList:$checkAReList")
     println("checkBList:$checkBReList")
     println("checkAList:$checkAPoint")
     println("checkBList:$checkBPoint")
+    println(checkBox(checkAPoint, checkBPoint))
 
+}
+
+fun checkBox(checkAPoint: Int, checkBPoint: Int): String {
+    var systeminfo: String = ""
     if (checkAPoint == 3 && checkBPoint == 3) {
-        println("放在A盒子,比較省錢")
+        systeminfo = "兩個都能放，但放在A盒子,比較省錢!"
     } else if (checkAPoint < 3 && checkBPoint < 3) {
-        println("沒有盒子可以放")
-    }  else if (checkBPoint == 3) {
-        println("放在B盒子")
+        systeminfo = "沒有符合的盒子可以放"
+    } else if (checkAPoint == 3) {
+        systeminfo = "放在A盒子"
+    } else if (checkBPoint == 3) {
+        systeminfo = "放在B盒子"
     }
+    return systeminfo
 }
 
 fun userInput(): MutableList<Float> {
