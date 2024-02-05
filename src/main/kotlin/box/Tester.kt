@@ -15,10 +15,10 @@ fun main() {
     val userInputList = userInputNum.reorder()
 
     val checkAReList = regularSizeA.reorder()
-    val checkAPoint = regularSizeA.checkBox(userInputNum, regularSizeA)
+    val checkAPoint = regularSizeA.checkBox(userInputList, checkAReList)
 
     val checkBReList = regularSizeB.reorder()
-    val checkBPoint = regularSizeB.checkBox(userInputNum, regularSizeB)
+    val checkBPoint = regularSizeB.checkBox(userInputList, checkBReList)
 
     println("userInputList:$userInputList")
     println("checkAList:$checkAReList")
