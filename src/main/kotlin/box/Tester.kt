@@ -12,46 +12,50 @@ fun main() {
     val regularSizeA = Size(23f, 14f, 13f)
     val regularSizeB = Size(39.5f, 27.5f, 23f)
 
-    val userInputList = userInputNum.reorder()
+//    userInputNum.reorder()
 
-    val checkAReList = regularSizeA.reorder()
-    val checkAPoint = regularSizeA.checkBox(userInputList, checkAReList)
+//    regularSizeA.reorder()
+    val checkAPoint = regularSizeA.checkBox(userInputNum)
 
-    val checkBReList = regularSizeB.reorder()
-    val checkBPoint = regularSizeB.checkBox(userInputList, checkBReList)
+//    regularSizeB.reorder()
+    val checkBPoint = regularSizeB.checkBox(userInputNum)
 
-    println("userInputList:$userInputList")
-    println("checkAList:$checkAReList")
-    println("checkBList:$checkBReList")
+//    println("userInputList:$userInputList")
+//    println("checkAList:$checkAReList")
+//    println("checkBList:$checkBReList")
     println("checkAList:$checkAPoint")
     println("checkBList:$checkBPoint")
     println(checkBox(checkAPoint, checkBPoint))
 
 }
 
-fun checkBox(checkAPoint: Int, checkBPoint: Int): String {
-    var systeminfo: String = ""
-    if (checkAPoint == 3 && checkBPoint == 3) {
+fun checkBox(checkAPoint: Boolean, checkBPoint: Boolean): String {
+    var systeminfo = ""
+    if (checkAPoint && checkBPoint) {
         systeminfo = "兩個都能放，但放在A盒子,比較省錢!"
-    } else if (checkAPoint < 3 && checkBPoint < 3) {
+    } else if (!checkAPoint && !checkBPoint) {
         systeminfo = "沒有符合的盒子可以放"
-    } else if (checkAPoint == 3) {
+    } else if (checkAPoint) {
         systeminfo = "放在A盒子"
-    } else if (checkBPoint == 3) {
+    } else if (checkBPoint) {
         systeminfo = "放在B盒子"
     }
     return systeminfo
 }
 
 fun userInput(): MutableList<Float> {
-    val scanner = Scanner(System.`in`)
+//    val scanner = Scanner(System.`in`)
     print("請用空白鍵間隔輸入長、寬、高:")
-    val userInput = scanner.nextLine()
-    val userInputString: MutableList<String> = userInput.split(" ").toMutableList()
-    val userInputNum: MutableList<Float> = mutableListOf()
-    for (item in userInputString) {
-        userInputNum.add(item.toFloat())
-    }
-    return userInputNum
+//    val userInput = scanner.nextLine()
+
+//    val userInputString: MutableList<String> = userInput.split(" ").toMutableList()
+//    val userInputNum: MutableList<Float> = mutableListOf()
+//    for (item in userInputString) {
+//        userInputNum.add(item.toFloat())
+//    }
+    return Scanner(System.`in`)
+        .nextLine().split(" ")
+        .map { it.toFloat() }
+        .toMutableList()
 }
 

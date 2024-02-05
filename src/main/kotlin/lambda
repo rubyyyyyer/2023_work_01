@@ -1,0 +1,28 @@
+//test(start)
+    fun test() {
+        val list1 = listOf(1, 2, 3, 4, 5, 6)
+
+// #0正常寫法
+        fun transform(num:Int):Int {
+            return num * num
+        }
+        val result = list1.map( ::transform )
+
+// #1匿名函數(正常)
+//        fun transform():(Int) -> Int {
+//            return  {
+//                num:Int ->
+//                num * num}
+//        }
+//        val result = list1.map( transform() )
+
+// #2匿名函數(簡潔)
+//        val transform: (Int) -> Int = {it*it}
+//        val result = list1.map( transform )
+
+// #3匿名函數(最精簡)
+//        val result = list1.map{it*it}
+        print(result)
+    }
+
+//test(end)

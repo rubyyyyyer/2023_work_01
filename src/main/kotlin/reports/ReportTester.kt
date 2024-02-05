@@ -1,4 +1,6 @@
-package reports.kotlin
+package reports
+
+import reports.FinanceReport
 
 class ReportTester() {
 }

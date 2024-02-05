@@ -1,4 +1,4 @@
-package reports.kotlin
+package reports
 
 class HealthReport : Report {
     override fun load() = println("載入健康檢查報告")

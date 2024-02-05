@@ -1,4 +1,4 @@
-package reports.kotlin
+package reports
 
 interface Report {
     fun load()
