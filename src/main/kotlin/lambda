@@ -8,11 +8,11 @@
         }
         val result = list1.map( ::transform )
 
-// #1匿名函數(正常)
+// #1多於寫法(不建議)
 //        fun transform():(Int) -> Int {
 //            return  {
-//                num:Int ->
-//                num * num}
+//                num:Int -> num * num
+                }
 //        }
 //        val result = list1.map( transform() )
 
